@@ -18,7 +18,7 @@ class Client implements ClientInterface
             ->asForm()
             ->acceptJson()
             ->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-                'secret' => config('services.turnstile.secret'),
+                'secret' => $this->secret ?: config('services.turnstile.secret'),
                 'response' => $response,
             ]);
 
