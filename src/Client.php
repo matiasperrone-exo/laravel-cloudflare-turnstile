@@ -22,7 +22,7 @@ class Client implements ClientInterface
                 'response' => $response,
             ]);
 
-        if (! $response->ok()) {
+        if ($response->ok()) {
             return SiteverifyResponse::success();
         }
 
